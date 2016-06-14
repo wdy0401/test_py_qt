@@ -8,7 +8,7 @@ QT       += core
 
 QT       -= gui
 
-TARGET = test_call_python
+TARGET = qt_call_py
 CONFIG   += console
 CONFIG   -= app_bundle
 
@@ -29,6 +29,9 @@ OTHER_FILES += \
 LIBS += -L$$PWD/../libs/pylibs/ -lpython35
 
 INCLUDEPATH += e:\include\python
+
+#程序需要在path中找到python的LIb 只需要Lib里的部分内容  但挑出需要的对以后扩展不利 而且一共只有30M+ 可以全包括进去
+#看pyc文件便知哪些py文件被用到了
 
 #注意版本一致  32位 64位问题
 #object.h 中需要做如下修改 不明为何

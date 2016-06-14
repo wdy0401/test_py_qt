@@ -12,17 +12,17 @@ int main(int argc, char *argv[])
     Py_Initialize();
     cerr<<"3"<<endl;
 
-    pModule=PyImport_ImportModule("wadd");    //mat是我自己用python写的一个小模块(mat.py)，里面内容见后面附录
+    pModule=PyImport_ImportModule("wadd");
     cerr<<"4"<<endl;
-    pValue=PyObject_CallMethod(pModule,"twadd","ii",10,20);   //通过上面得到的模块直接访问模块里面的函数add(a,b)
-                                                                              //注意这里的"ii"事实上相当于C中的"%d%d"的功能，请参考文档
+    pValue=PyObject_CallMethod(pModule,"twadd","ii",10,20);
+
     cerr<<"5"<<endl;
-    cerr<<PyLong_AsLong(pValue)<<endl;            //将得到的pValue值转换为C中的long型
+    cerr<<PyLong_AsLong(pValue)<<endl;
 
     cerr<<"6"<<endl;
-    pFunc=PyObject_GetAttrString(pModule, "twadd");  //也可以使用该函数得到函数对象
+    pFunc=PyObject_GetAttrString(pModule, "twadd");
     cerr<<"7"<<endl;
-    pValue=PyObject_CallFunction(pFunc,"ii",1000,22);    //通过函数对象执行函数
+    pValue=PyObject_CallFunction(pFunc,"ii",1000,22);
     cerr<<"8"<<endl;
     cout<<PyLong_AsLong(pValue)<<endl;
     cerr<<"9"<<endl;
