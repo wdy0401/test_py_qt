@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
-
+c=0
 def twadd(a,b):
-	return 100001
+	global c
+	c=c+a+b	
+	print("###")
+	print(a)
+	print(b)
+	print(c)
+	print("###\n")
+	return c
