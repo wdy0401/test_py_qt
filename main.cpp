@@ -11,13 +11,15 @@ int main(int argc, char *argv[])
     pModule=PyImport_ImportModule("wadd");
 
     pFunc=PyObject_GetAttrString(pModule, "twadd");
-    pValue=PyObject_CallFunction(pFunc,"ii",10,100);
-    pValue=PyObject_CallFunction(pFunc,"ii",10,100);
+
+    char b;
+    b=getchar();
+
     pValue=PyObject_CallFunction(pFunc,"ii",10,100);
 
     pValue=PyObject_CallMethod(pModule,"twadd","ii",1,1000);
-    pValue=PyObject_CallMethod(pModule,"twadd","ii",1,1000);
-    pValue=PyObject_CallMethod(pModule,"twadd","ii",1,1000);
+
+    pValue=PyObject_CallMethod(pModule,"twmul","ii",1,1000);
     Py_Finalize();
 
     return a.exec();
