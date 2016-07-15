@@ -1,11 +1,9 @@
-#include <QCoreApplication>
 #include"E:\include\python\python.h"
 #include<iostream>
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
     PyObject *pModule, *pFunc, *pValue;
     Py_Initialize();
     pModule=PyImport_ImportModule("wadd");
@@ -13,7 +11,7 @@ int main(int argc, char *argv[])
     pFunc=PyObject_GetAttrString(pModule, "twadd");
 
     char b;
-    b=getchar();
+    //b=getchar();
 
     pValue=PyObject_CallFunction(pFunc,"ii",10,100);
 
@@ -21,6 +19,5 @@ int main(int argc, char *argv[])
 
     pValue=PyObject_CallMethod(pModule,"twmul","ii",1,1000);
     Py_Finalize();
-
-    return a.exec();
+    return 0;
 }
