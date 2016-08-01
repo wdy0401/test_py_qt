@@ -30,6 +30,7 @@ LIBS += -L$$PWD/../libs/pylibs/ -lpython35
 
 INCLUDEPATH += e:\include\python
 
+#如何制定路径 以便可以不把那么多py copy到本地目录
 #程序需要在path中找到python的LIb 只需要Lib里的部分内容  但挑出需要的对以后扩展不利 而且一共只有30M+ 可以全包括进去
 #看pyc文件便知哪些py文件被用到了
 

@@ -4,7 +4,10 @@ using namespace std;
 
 int main()
 {
-    PyObject *pModule, *pFunc, *pValue,*pM2;
+    PyObject *pModule, *pFunc, *pValue;
+//    wchar_t  a[100]=L"C:/Anaconda3/Lib";
+//    Py_SetPythonHome(a);
+//    这段不管用
     Py_Initialize();
 
     pModule=PyImport_ImportModule("wadd");
