@@ -14,6 +14,8 @@ int main()
     pValue=PyObject_CallFunction(pFunc,"ii",10,100);
     pValue=PyObject_CallMethod(pModule,"twadd","ii",1,1000);
     pValue=PyObject_CallMethod(pModule,"twmul","ii",1,1000);
+
+   cout<<"aaaaa "<<PyLong_AsLong(pValue)<<endl;
     Py_Finalize();
     return 0;
 }
