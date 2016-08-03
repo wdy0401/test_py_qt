@@ -8,14 +8,17 @@ int main()
 {
     init_py();
 
-    PyObject *pModule, *pFunc, *pValue;
+    PyObject *pModule, *pFunc, *pValue_int,*pValue_char;
     pModule=PyImport_ImportModule("wadd");
     pFunc=PyObject_GetAttrString(pModule, "twadd");
-    pValue=PyObject_CallFunction(pFunc,"ii",10,100);
-    pValue=PyObject_CallMethod(pModule,"twadd","ii",1,1000);
-    pValue=PyObject_CallMethod(pModule,"twmul","ii",1,1000);
+    pValue_int=PyObject_CallFunction(pFunc,"ii",10,100);
 
-   cout<<"aaaaa "<<PyLong_AsLong(pValue)<<endl;
+    pValue_int=PyObject_CallMethod(pModule,"twadd","ii",1,1000);
+    cout<<"Int from python\t"<<PyLong_AsLong(pValue_int)<<endl;
+
+    pValue_char=PyObject_CallMethod(pModule,"twmul","ii",1,1000);
+    cout<<"char * from python\t"<<PyUnicode_1BYTE_DATA(pValue_char)<<endl;
+
     Py_Finalize();
     return 0;
 }
