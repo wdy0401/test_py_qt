@@ -19,6 +19,17 @@ int main()
     pValue_char=PyObject_CallMethod(pModule,"twmul","ii",1,1000);
     cout<<"char * from python\t"<<PyUnicode_1BYTE_DATA(pValue_char)<<endl;
 
+
+    PyObject * pValue_dict;
+    pValue_dict=PyObject_CallMethod(pModule,"twdict","ii",1,1000);
+
+    pValue_char=PyDict_GetItem(pValue_dict, PyUnicode_FromString("char"));
+    cout<<"dict char * from python\t"<<PyUnicode_1BYTE_DATA(pValue_char)<<endl;
+
+    pValue_int=PyDict_GetItem(pValue_dict, PyUnicode_FromString("int"));
+    cout<<"dict int from python\t"<<PyLong_AsLong(pValue_int)<<endl;
+
+
     Py_Finalize();
     return 0;
 }
