@@ -37,17 +37,17 @@ int main()
 void init_py()
 {
     Py_SetPythonHome((wchar_t *)L"C:/Anaconda3");
-     Py_Initialize();
-     PyRun_SimpleString("import sys");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\python35.zip')");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\DLLs')");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib')");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3')");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages')");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\Sphinx-1.4.1-py3.5.egg')");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\win32')");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\win32\\lib')");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\Pythonwin')");
-     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\setuptools-23.0.0-py3.5.egg')");
-     PyRun_SimpleString("sys.path.append('C:/Wind/Wind.NET.Client/WindNET/bin')");
+    Py_Initialize();
+    PyRun_SimpleString("import sys");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\python35.zip')");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\DLLs')");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib')");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3')");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages')");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\Sphinx-1.4.1-py3.5.egg')");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\win32')");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\win32\\lib')");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\Pythonwin')");
+    PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\setuptools-23.0.0-py3.5.egg')");
+    PyRun_SimpleString("sys.path.append('C:/Wind/Wind.NET.Client/WindNET/bin')");
 }
