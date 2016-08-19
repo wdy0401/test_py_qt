@@ -4,6 +4,9 @@ using namespace std;
 
 void init_py();
 
+
+const unsigned char * get_dict_char(PyObject * dict,const string & key);
+int get_dict_int(PyObject * dict,const string & key);
 int main()
 {
     init_py();
@@ -30,6 +33,9 @@ int main()
     cout<<"dict int from python\t"<<PyLong_AsLong(pValue_int)<<endl;
 
 
+    cout<<"dict char * from python\t"<<get_dict_char(pValue_dict,"char")<<endl;
+    cout<<"dict int * from python\t"<<get_dict_int(pValue_dict,"int")<<endl;
+
     Py_Finalize();
     return 0;
 }
@@ -50,4 +56,13 @@ void init_py()
     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\Pythonwin')");
     PyRun_SimpleString("sys.path.append('C:\\Anaconda3\\lib\\site-packages\\setuptools-23.0.0-py3.5.egg')");
     PyRun_SimpleString("sys.path.append('C:/Wind/Wind.NET.Client/WindNET/bin')");
+}
+int get_dict_int(PyObject * dict,const string & key)
+{
+    return PyLong_AsLong(PyDict_GetItem(dict, PyUnicode_FromString(key.c_str())));
+}
+
+const unsigned char * get_dict_char(PyObject * dict,const string & key)
+{
+    return PyUnicode_1BYTE_DATA(PyDict_GetItem(dict, PyUnicode_FromString(key.c_str())));
 }
